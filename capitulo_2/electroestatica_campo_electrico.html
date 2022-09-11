@@ -408,16 +408,16 @@ title="Print to PDF"
 <h2><span class="section-number">1.1.3. </span>Campo eléctrico<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Si observamos <span class="math notranslate nohighlight">\(N\)</span> cargas <span class="math notranslate nohighlight">\(q_{1},q_{2}, \ldots, q_{N}, \ldots \)</span> cada una a distancias <span class="math notranslate nohighlight">\(\mathbf{r}_{01},\mathbf{r}_{02}, \ldots, \mathbf{r}_{0N}, \ldots \)</span> de la carga prueba <span class="math notranslate nohighlight">\(q_{0}=Q\)</span>, la fuerza total sobre la carga prueba es</p>
 <div class="math notranslate nohighlight" id="equation-suma-fuerzas">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-suma-fuerzas" title="Permalink to this equation">#</a></span>\[\mathbf{F}_{0}=\sum_{i=1}^{N} \mathbf{F}_{0i}=\frac{1}{4 \pi \epsilon_{0}} \sum_{i=1}^{N} \frac{Q q_{i}}{\mathbf{r}_{0i}} \hat{r}_{0i}.\]</div>
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-suma-fuerzas" title="Permalink to this equation">#</a></span>\[\mathbf{F}_{0}=\sum_{i=1}^{N} \mathbf{F}_{0i}=\frac{1}{4 \pi \epsilon_{0}} \sum_{i=1}^{N} \frac{Q q_{i}}{r_{0i}^{2}} \hat{r}_{0i}.\]</div>
 <p>Podemos factorizar el factor común <span class="math notranslate nohighlight">\(Q\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-campo-0">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-campo-0" title="Permalink to this equation">#</a></span>\[\mathbf{F}_{0}=\frac{1}{4 \pi \epsilon_{0}} Q \sum_{i=1}^{N} \frac{q_{i}}{\mathbf{r}_{0i}} \hat{r}_{0i}.\]</div>
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-campo-0" title="Permalink to this equation">#</a></span>\[\mathbf{F}_{0}=\frac{1}{4 \pi \epsilon_{0}} Q \sum_{i=1}^{N} \frac{q_{i}}{r_{0i}^{2}} \hat{r}_{0i}.\]</div>
 <p>De esta manera definimos el campo eléctrico <span class="math notranslate nohighlight">\(\mathbf{E}(\mathbf{r})\)</span> en la posición <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> de la carga prueba</p>
 <div class="math notranslate nohighlight" id="equation-campo-1">
 <span class="eqno">(1.5)<a class="headerlink" href="#equation-campo-1" title="Permalink to this equation">#</a></span>\[\mathbf{F}_{0}= Q \mathbf{E}(\mathbf{r}) ,\]</div>
 <p>en donde,</p>
 <div class="math notranslate nohighlight" id="equation-campo-2">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-campo-2" title="Permalink to this equation">#</a></span>\[\mathbf{E}_{0}(\mathbf{r})=\frac{1}{4 \pi \epsilon_{0}} \sum_{i=1}^{N} \frac{q_{i}}{\mathbf{r}_{0i}} \hat{r}_{0i}.\]</div>
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-campo-2" title="Permalink to this equation">#</a></span>\[\mathbf{E}_{0}(\mathbf{r})=\frac{1}{4 \pi \epsilon_{0}} \sum_{i=1}^{N} \frac{q_{i}}{r_{0i}^{2}} \hat{r}_{0i}.\]</div>
 <p>El campo eléctrico indica la fuerza que una configuración de carga ejerce sobre una carga prueba. Para que esta interpretación tenga sentido, se requiere que la carga de prueba sea lo suficientemente pequeñá para que no altere la posición de las cargas fuente, es decir <span class="math notranslate nohighlight">\(Q \rightarrow 0\)</span>. Al tomar este límite la fuerza también cambia, por lo que este proceso límite define al campo eléctrico como la derivada parcial de la fuerza respecto a la carga:</p>
 <div class="math notranslate nohighlight" id="equation-campo-3">
 <span class="eqno">(1.7)<a class="headerlink" href="#equation-campo-3" title="Permalink to this equation">#</a></span>\[\mathbf{E}_{0}(\mathbf{r})=\lim_{Q \rightarrow 0} \frac{\Delta \mathbf{F} }{ Q} = \frac{\partial \mathbf{F} }{\partial Q} \]</div>
