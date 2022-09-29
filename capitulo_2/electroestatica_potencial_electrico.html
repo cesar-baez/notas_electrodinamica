@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.4. Trabajo y energía electroestática" href="electroestatica_trabajo_energia.html" />
@@ -266,12 +268,71 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cambio-de-punto-de-referencia-para-el-potencial">
+   1.3.1. Cambio de punto de referencia para el potencial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-potencial-electrico-y-el-principio-de-superposicion">
+   1.3.2. El potencial eléctrico y el principio de superposición
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unidades-del-potencial-electrico">
+   1.3.3. Unidades del potencial eléctrico
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-2-7-potencial-de-un-cascaron-esferico-calculado-por-medio-del-campo-electrico">
+   1.3.4. Ejemplo 2.7 (Potencial de un cascarón esférico calculado por medio del campo eléctrico)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecuacion-de-poisson-y-laplace">
+   1.3.5. Ecuación de Poisson y Laplace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-potencial-de-una-distribucion-de-carga-localizada">
+   1.3.6. El potencial de una distribución de carga (localizada)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-2-8">
+   1.3.7. Ejemplo 2.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#condiciones-de-frontera">
+   1.3.8. Condiciones de frontera
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -283,6 +344,54 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cambio-de-punto-de-referencia-para-el-potencial">
+   1.3.1. Cambio de punto de referencia para el potencial
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-potencial-electrico-y-el-principio-de-superposicion">
+   1.3.2. El potencial eléctrico y el principio de superposición
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unidades-del-potencial-electrico">
+   1.3.3. Unidades del potencial eléctrico
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-2-7-potencial-de-un-cascaron-esferico-calculado-por-medio-del-campo-electrico">
+   1.3.4. Ejemplo 2.7 (Potencial de un cascarón esférico calculado por medio del campo eléctrico)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecuacion-de-poisson-y-laplace">
+   1.3.5. Ecuación de Poisson y Laplace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-potencial-de-una-distribucion-de-carga-localizada">
+   1.3.6. El potencial de una distribución de carga (localizada)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-2-8">
+   1.3.7. Ejemplo 2.8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#condiciones-de-frontera">
+   1.3.8. Condiciones de frontera
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -292,6 +401,98 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="potencial-electrico">
 <h1><span class="section-number">1.3. </span>Potencial eléctrico<a class="headerlink" href="#potencial-electrico" title="Permalink to this headline">#</a></h1>
+<p>Una de las consecuencias de que el campo eléctrico <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> sea irrotacional,</p>
+<div class="math notranslate nohighlight" id="equation-e-rot-cero">
+<span class="eqno">(1.35)<a class="headerlink" href="#equation-e-rot-cero" title="Permalink to this equation">#</a></span>\[\vec{\nabla} \times \mathbf{E} =0,\]</div>
+<p>y que por lo tanto sea el gradiente de una función, <span class="math notranslate nohighlight">\(\mathbf{E}=\vec{\nabla} \phi\)</span> , es que la integral del campo en un camino cerrado es cero,</p>
+<div class="math notranslate nohighlight" id="equation-int-e-cero">
+<span class="eqno">(1.36)<a class="headerlink" href="#equation-int-e-cero" title="Permalink to this equation">#</a></span>\[\oint \mathbf{E} \cdot d \vec{l}=0.\]</div>
+<p>Ya que el campo eléctrico representa a la fuerza sobre una carga de prueba <span class="math notranslate nohighlight">\(Q\)</span>, es decir, <span class="math notranslate nohighlight">\(\mathbf{F}=Q \mathbf{E}\)</span>, que la integral de camino cerrada sea cero significa que la fuerza es conservativa. A la integral la podemos interpretar como el trabajo que realiza esta fuerza y por lo tanto define la energía potencial asociada a la fuerza electroestática. Que sea conservativa significa que esta integral solo depdende del estado inicial y final. Si tomamos al punto <span class="math notranslate nohighlight">\(\mathbf{O}\)</span> como referencia para calcular la integral, podemos definir el <strong>potencial eléctrico</strong> <span class="math notranslate nohighlight">\(V(\mathbf{r})\)</span> como</p>
+<div class="math notranslate nohighlight" id="equation-definicion-potencial-electrico">
+<span class="eqno">(1.37)<a class="headerlink" href="#equation-definicion-potencial-electrico" title="Permalink to this equation">#</a></span>\[V(\mathbf{r})=-\int_{\mathbf{O}}^{\mathbf{r}} \mathbf{E} \cdot d \vec{l}.\]</div>
+<p>Una vez que fijamos el punto de referencia <span class="math notranslate nohighlight">\(\mathbf{O}\)</span>, el potencial eléctrico solo depende de la posición <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>.</p>
+<p>Ya que esta es una energía potencial, únicamente las diferencias de potencial tienen significado físico, al calcular la diferencia encontramos que</p>
+<div class="math notranslate nohighlight" id="equation-delta-potencial-electrico-0">
+<span class="eqno">(1.38)<a class="headerlink" href="#equation-delta-potencial-electrico-0" title="Permalink to this equation">#</a></span>\[V(\mathbf{b})-V(\mathbf{a})=-\int_{\mathbf{O}}^{\mathbf{b}} \mathbf{E} \cdot d \vec{l}+\int_{\mathbf{O}}^{\mathbf{a}} \mathbf{E} \cdot d \vec{l}.\]</div>
+<p>Si ahora cambiamos el orden de integración en la integral de <span class="math notranslate nohighlight">\(v(\mathbf{a})\)</span>, obtenemos</p>
+<div class="math notranslate nohighlight" id="equation-delta-potencial-electrico-1">
+<span class="eqno">(1.39)<a class="headerlink" href="#equation-delta-potencial-electrico-1" title="Permalink to this equation">#</a></span>\[V(\mathbf{b})-V(\mathbf{a})=-\int_{\mathbf{O}}^{\mathbf{b}} \mathbf{E} \cdot d \vec{l}-\int_{\mathbf{a}}^{\mathbf{O}} \mathbf{E} \cdot d \vec{l}.\]</div>
+<p>Finalmente vemos que podemos juntar las dos integrales en una sola:</p>
+<div class="math notranslate nohighlight" id="equation-delta-potencial-electrico">
+<span class="eqno">(1.40)<a class="headerlink" href="#equation-delta-potencial-electrico" title="Permalink to this equation">#</a></span>\[V(\mathbf{b})-V(\mathbf{a})=-\int_{\mathbf{a}}^{\mathbf{b}} \mathbf{E} \cdot d \vec{l}.\]</div>
+<p><strong>El teorema fundamental del cálculo para gradientes</strong>,</p>
+<div class="math notranslate nohighlight" id="equation-teorema-gradientes">
+<span class="eqno">(1.41)<a class="headerlink" href="#equation-teorema-gradientes" title="Permalink to this equation">#</a></span>\[V(\mathbf{b})-V(\mathbf{a})=\int_{\mathbf{b}}^{\mathbf{a}} (\vec{\nabla} V)  \cdot d \vec{l},\]</div>
+<p>nos permite relacionar al gradiente del potencial eléctrico con el campo eléctrico</p>
+<div class="math notranslate nohighlight" id="equation-relacion-campo-y-potencial">
+<span class="eqno">(1.42)<a class="headerlink" href="#equation-relacion-campo-y-potencial" title="Permalink to this equation">#</a></span>\[\mathbf{E}(\mathbf{r})=-\vec{\nabla} V(\mathbf{r}) .\]</div>
+<p>De esta manera identificamos al potencial con la función escalar que al calcular su gradiente nos permite obtener el campo eléctrico. El potencial tiene la ventaja sobre el campo eléctrico de que el potencial tan solo es una función escalar y no necesitamos realizar cálculos para cada componente de un vector como es el caso con el campo eléctrico.</p>
+<section id="cambio-de-punto-de-referencia-para-el-potencial">
+<h2><span class="section-number">1.3.1. </span>Cambio de punto de referencia para el potencial<a class="headerlink" href="#cambio-de-punto-de-referencia-para-el-potencial" title="Permalink to this headline">#</a></h2>
+<p>Analicemos que sucede si cambiamos el punto de referencia <span class="math notranslate nohighlight">\(\mathbf{O}\)</span> a otro punto <span class="math notranslate nohighlight">\(\mathbf{O}'\)</span>. Con el nuevo punto de referncia tenemos un nuevo potencial</p>
+<div class="math notranslate nohighlight" id="equation-referencia-potencial-0">
+<span class="eqno">(1.43)<a class="headerlink" href="#equation-referencia-potencial-0" title="Permalink to this equation">#</a></span>\[V'(\mathbf{r})=-\int_{\mathbf{O'}}^{\mathbf{r}}  \mathbf{E} \cdot d \vec{l}\]</div>
+<p>Si ahora tomamos el siguiente camino</p>
+<div class="math notranslate nohighlight" id="equation-referencia-potencial-1">
+<span class="eqno">(1.44)<a class="headerlink" href="#equation-referencia-potencial-1" title="Permalink to this equation">#</a></span>\[V'(\mathbf{r})=-\int_{\mathbf{O'}}^{\mathbf{O}}  \mathbf{E} \cdot d \vec{l}-\int_{\mathbf{O}}^{\mathbf{r}}  \mathbf{E} \cdot d \vec{l},\]</div>
+<p>la primera integral es una constante, mientras que la segunda integral es el potencial que habíamos definido originalmente</p>
+<div class="math notranslate nohighlight" id="equation-referencia-potencial-2">
+<span class="eqno">(1.45)<a class="headerlink" href="#equation-referencia-potencial-2" title="Permalink to this equation">#</a></span>\[V'(\mathbf{r})=k+V(\mathbf{r}) \]</div>
+<p>Estas dos definiciones del potencial solo son diferentes en la suma de una constante, ambas definiciones son físicamente equivalentes ya que, como habiamos mencionado anteriormente, <strong>solo las diferencias de potencial tienen significado físico</strong>.</p>
+<p>El punto de referencia <span class="math notranslate nohighlight">\(\mathbf{O'}\)</span> se escoge en un lugar donde el campo sea cero. Para una distribución de carga finita esto significa que el cero de potencial está en una superficie muy alejada, o dicho de otra manera, en el infinito. Para una distribución de carga infinita no hay un lugar en donde el campo sea cero, por lo que se toma un punto de referencia arbitrario pero conveniente para la descripción del sistema.</p>
+</section>
+<section id="el-potencial-electrico-y-el-principio-de-superposicion">
+<h2><span class="section-number">1.3.2. </span>El potencial eléctrico y el principio de superposición<a class="headerlink" href="#el-potencial-electrico-y-el-principio-de-superposicion" title="Permalink to this headline">#</a></h2>
+<p>Este principio parte de que las fuerzas eléctricas son aditivas por pares, es decir se suman las fuerzas debido a cada fuente de campo. Para la carga de prueba <span class="math notranslate nohighlight">\(q_0\)</span>, la fuerza aplicada <span class="math notranslate nohighlight">\(\mathbf{F}_0\)</span> debido a <span class="math notranslate nohighlight">\(N\)</span> cargas, <span class="math notranslate nohighlight">\(q_{1},q_2,q_3, \ldots\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-aditivadad-fuerzas">
+<span class="eqno">(1.46)<a class="headerlink" href="#equation-aditivadad-fuerzas" title="Permalink to this equation">#</a></span>\[\mathbf{F}_0=\mathbf{F}_{01}+\mathbf{F}_{02}+\cdots,\]</div>
+<p>en donde hemos usado la ley de Coulomb para calcular la fuerza \mathbf{F}_{0i} a una distancia <span class="math notranslate nohighlight">\(\mathbf{r}_{0i}=\mathbf{r}_{0}-\mathbf{r}_{i}\)</span>. Al dividir esta expresión entre la carga prueba, obtenemos el campo eléctrico total en la posición <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> de la carga de prueba,</p>
+<div class="math notranslate nohighlight" id="equation-aditivadad-campos">
+<span class="eqno">(1.47)<a class="headerlink" href="#equation-aditivadad-campos" title="Permalink to this equation">#</a></span>\[\mathbf{E}(\mathbf{r})=\mathbf{E}_{01}+\mathbf{E}_{02}+\cdots.\]</div>
+<p>Al integrar esta última expresión sobre un camino obtenemos el potencial eléctrico debido a <span class="math notranslate nohighlight">\(N\)</span> cargas puntuales,</p>
+<div class="math notranslate nohighlight" id="equation-aditivadad-potenciales">
+<span class="eqno">(1.48)<a class="headerlink" href="#equation-aditivadad-potenciales" title="Permalink to this equation">#</a></span>\[V(\mathbf{r})=V_{01}+V_{02}+\cdots,\]</div>
+<p>con una suma escalar en vez de una suma vectorial.</p>
+</section>
+<section id="unidades-del-potencial-electrico">
+<h2><span class="section-number">1.3.3. </span>Unidades del potencial eléctrico<a class="headerlink" href="#unidades-del-potencial-electrico" title="Permalink to this headline">#</a></h2>
+<p>Ya que el campo eléctrico tiene unidades</p>
+<div class="math notranslate nohighlight" id="equation-unidades-campo">
+<span class="eqno">(1.49)<a class="headerlink" href="#equation-unidades-campo" title="Permalink to this equation">#</a></span>\[[\mathbf{E}]=\frac{[\mathbf{F}]}{[Q]}.\]</div>
+<p>Para el SI esto corresponde a Newtons sobre Coulomb. Ya que el potencial es básicamente el campo por una distancia</p>
+<div class="math notranslate nohighlight" id="equation-unidades-potencial">
+<span class="eqno">(1.50)<a class="headerlink" href="#equation-unidades-potencial" title="Permalink to this equation">#</a></span>\[[V]=\frac{[F][L]}{[Q]},\]</div>
+<p>en el SI esto es Joules sobre Coulomb. A las unidades del potencial eléctrico en el SI se le llaman volts V</p>
+<div class="math notranslate nohighlight" id="equation-definicion-volts">
+<span class="eqno">(1.51)<a class="headerlink" href="#equation-definicion-volts" title="Permalink to this equation">#</a></span>\[V=\frac{J}{C}.\]</div>
+</section>
+<section id="ejemplo-2-7-potencial-de-un-cascaron-esferico-calculado-por-medio-del-campo-electrico">
+<h2><span class="section-number">1.3.4. </span>Ejemplo 2.7 (Potencial de un cascarón esférico calculado por medio del campo eléctrico)<a class="headerlink" href="#ejemplo-2-7-potencial-de-un-cascaron-esferico-calculado-por-medio-del-campo-electrico" title="Permalink to this headline">#</a></h2>
+<p>Encuentre el potencial dentro y fuera de un cascarón esférico de radio <span class="math notranslate nohighlight">\(R\)</span> con una carga superficial uniforme. Escoja el punto de referencia al infinito. a) Fuera de la esfera, b) Dentro de la esfera</p>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>El ejercicio se resuelve en clase, se recomienda que el lector intente resolverlo por su cuenta y tome la respuesta como guía.</p>
+</div>
+<p>Respuesta inciso a:</p>
+<div class="math notranslate nohighlight" id="equation-solucion-ejemplo-2-7-a">
+<span class="eqno">(1.52)<a class="headerlink" href="#equation-solucion-ejemplo-2-7-a" title="Permalink to this equation">#</a></span>\[v(\mathbf{r}) = \frac{1}{4 \pi \epsilon_{0}} \frac{q}{r}.\]</div>
+<p>Respuesta inciso b:</p>
+<div class="math notranslate nohighlight" id="equation-solucion-ejemplo-2-7-b">
+<span class="eqno">(1.53)<a class="headerlink" href="#equation-solucion-ejemplo-2-7-b" title="Permalink to this equation">#</a></span>\[v(\mathbf{r}) = \frac{1}{4 \pi \epsilon_{0}} \frac{q}{R}.\]</div>
+<p>Ya que dentro de la esfera el potencial no depende de la posición y es el mismo en todas partes, se dice que estamos en una región equipotencial.</p>
+</section>
+<section id="ecuacion-de-poisson-y-laplace">
+<h2><span class="section-number">1.3.5. </span>Ecuación de Poisson y Laplace<a class="headerlink" href="#ecuacion-de-poisson-y-laplace" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="el-potencial-de-una-distribucion-de-carga-localizada">
+<h2><span class="section-number">1.3.6. </span>El potencial de una distribución de carga (localizada)<a class="headerlink" href="#el-potencial-de-una-distribucion-de-carga-localizada" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="ejemplo-2-8">
+<h2><span class="section-number">1.3.7. </span>Ejemplo 2.8<a class="headerlink" href="#ejemplo-2-8" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="condiciones-de-frontera">
+<h2><span class="section-number">1.3.8. </span>Condiciones de frontera<a class="headerlink" href="#condiciones-de-frontera" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -342,7 +543,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By César Alejandro Báez<br/>
+    By César A. Báez<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
