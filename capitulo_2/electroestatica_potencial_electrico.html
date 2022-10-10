@@ -329,6 +329,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#condiciones-de-frontera">
    1.3.8. Condiciones de frontera
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condiciones-de-frontera-del-campo-electrico">
+     1.3.8.1. Condiciones de frontera del campo eléctrico
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condiciones-de-frontera-del-potencial-electrico">
+     1.3.8.2. Condiciones de frontera del potencial eléctrico
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -388,6 +400,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#condiciones-de-frontera">
    1.3.8. Condiciones de frontera
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condiciones-de-frontera-del-campo-electrico">
+     1.3.8.1. Condiciones de frontera del campo eléctrico
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#condiciones-de-frontera-del-potencial-electrico">
+     1.3.8.2. Condiciones de frontera del potencial eléctrico
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -483,15 +507,101 @@ title="Print to PDF"
 </section>
 <section id="ecuacion-de-poisson-y-laplace">
 <h2><span class="section-number">1.3.5. </span>Ecuación de Poisson y Laplace<a class="headerlink" href="#ecuacion-de-poisson-y-laplace" title="Permalink to this headline">#</a></h2>
+<p>Como el campo eléctrico se puede calcular a partir del potencial</p>
+<div class="math notranslate nohighlight" id="equation-campo-elecrtico-pot">
+<span class="eqno">(1.54)<a class="headerlink" href="#equation-campo-elecrtico-pot" title="Permalink to this equation">#</a></span>\[\mathbf{E}(\mathbf{r}) = - \vec{\nabla} V(\mathbf{r})\]</div>
+<p>podemos usar la ley de Gauss diferencial <a class="reference internal" href="electroestatica_flujo_de_campo.html#equation-ley-gauss-diferencial">(1.29)</a></p>
+<div class="math notranslate nohighlight" id="equation-ley-gauss-diferencial-2">
+<span class="eqno">(1.55)<a class="headerlink" href="#equation-ley-gauss-diferencial-2" title="Permalink to this equation">#</a></span>\[\vec{\nabla} \cdot \mathbf{E}(\mathbf{r}) = \frac{\rho(\mathbf{r})}{\epsilon_{0}},\]</div>
+<p>y así obtener la <strong>ecaución de Poisson</strong></p>
+<div class="math notranslate nohighlight" id="equation-ecuacion-poisson">
+<span class="eqno">(1.56)<a class="headerlink" href="#equation-ecuacion-poisson" title="Permalink to this equation">#</a></span>\[\nabla^2 V(\mathbf{r}) = -\frac{\rho(\mathbf{r})}{\epsilon_{0}},\]</div>
+<p>la cual se escribe con el operador Laplaciano (en coordenadas cartesianas):</p>
+<div class="math notranslate nohighlight" id="equation-operador-laplaciano">
+<span class="eqno">(1.57)<a class="headerlink" href="#equation-operador-laplaciano" title="Permalink to this equation">#</a></span>\[\nabla^2 = \frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}+\frac{\partial^{2}}{\partial z^{2}}.\]</div>
+<p>Esta ecuación generalmente se usa en las regiones diferentes a donde se encuentra la distribución de carga, es decir se usa en la región donde <span class="math notranslate nohighlight">\(\rho(\mathbf{r})=0\)</span>. Cuando sucede esto, la ecuación de Poisson se le llama la <strong>ecuación de Laplace</strong></p>
+<div class="math notranslate nohighlight" id="equation-ecuacion-laplace">
+<span class="eqno">(1.58)<a class="headerlink" href="#equation-ecuacion-laplace" title="Permalink to this equation">#</a></span>\[\nabla^2 V(\mathbf{r}) = 0.\]</div>
+<p>En las aplicaciones de estas ecuaciones, la distribución de carga, <span class="math notranslate nohighlight">\(\rho(\mathbf{r})\)</span>, es conocida y con ella se calcula <span class="math notranslate nohighlight">\(V(\mathbf{r})\)</span> resolviendo la ecuación diferencial.</p>
 </section>
 <section id="el-potencial-de-una-distribucion-de-carga-localizada">
 <h2><span class="section-number">1.3.6. </span>El potencial de una distribución de carga (localizada)<a class="headerlink" href="#el-potencial-de-una-distribucion-de-carga-localizada" title="Permalink to this headline">#</a></h2>
+<p>Para calcular el potencial de una distribución de carga empezamos con el de una carga puntual, la trasladaremos y después usaremos el principio de superposición.</p>
+<p>Ya que el campo de una carga puntual en el origen es</p>
+<div class="math notranslate nohighlight" id="equation-campo-origen">
+<span class="eqno">(1.59)<a class="headerlink" href="#equation-campo-origen" title="Permalink to this equation">#</a></span>\[\mathbf{E}(\mathbf{r}) = \frac{1}{4 \pi \epsilon_{0}} \frac{q}{r^{2}}\hat{r},\]</div>
+<p>utilizaremos la simetría esférica para realizar la integral del camino para calcular el potencial. El diferencial de línea está dado por:</p>
+<div class="math notranslate nohighlight" id="equation-diferencial-linea">
+<span class="eqno">(1.60)<a class="headerlink" href="#equation-diferencial-linea" title="Permalink to this equation">#</a></span>\[d \mathbf{l} = dr \hat{r}+ r d \theta \hat{\theta}+ r^{2} \sin(\theta) d \phi \hat{\phi} .\]</div>
+<p>El potencial de una  carga puntual en el origen es</p>
+<div class="math notranslate nohighlight" id="equation-potencial-origen">
+<span class="eqno">(1.61)<a class="headerlink" href="#equation-potencial-origen" title="Permalink to this equation">#</a></span>\[V(\mathbf{r})=- \int \mathbf{E}(\mathbf{r}) \cdot d \mathbf{l} = -\int_{\infty}^{r} \frac{1}{4 \pi \epsilon_{0}} \frac{q}{r^{2}} dr=\frac{1}{4 \pi \epsilon_{0}} \frac{q}{r}.\]</div>
+<p>Si la carga <span class="math notranslate nohighlight">\(q\)</span> no está en el origen, si no en una posición <span class="math notranslate nohighlight">\(\mathbf{r}'\)</span>, usaremos el vector <span class="math notranslate nohighlight">\(\mathbf{s}=\mathbf{r}-\mathbf{r}'\)</span> y encontramos que el potencial es</p>
+<div class="math notranslate nohighlight" id="equation-potencial-desplazado">
+<span class="eqno">(1.62)<a class="headerlink" href="#equation-potencial-desplazado" title="Permalink to this equation">#</a></span>\[V(\mathbf{r})=\frac{1}{4 \pi \epsilon_{0}} \frac{q}{s}.\]</div>
+<p>Para <span class="math notranslate nohighlight">\(n\)</span> cargas con posiciones <span class="math notranslate nohighlight">\(\mathbf{r}'_{i}\)</span> usamos el principio de superposición y así calcular el potencial en <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>. Para esto definimos las distancias <span class="math notranslate nohighlight">\(\mathbf{s}_{i}=\mathbf{r}'_{i}-\mathbf{r}\)</span> y el potencial es</p>
+<div class="math notranslate nohighlight" id="equation-potencial-superposicion">
+<span class="eqno">(1.63)<a class="headerlink" href="#equation-potencial-superposicion" title="Permalink to this equation">#</a></span>\[V(\mathbf{r})=\sum_{i=1}^{n} \frac{1}{4 \pi \epsilon_{0}} \frac{q_{i}}{s_{i}}.\]</div>
+<p>Al tomar considerar una distribución de carga, tomamos los límites adecuados y encontramos que</p>
+<div class="math notranslate nohighlight" id="equation-potencial-distribucion">
+<span class="eqno">(1.64)<a class="headerlink" href="#equation-potencial-distribucion" title="Permalink to this equation">#</a></span>\[V(\mathbf{r})=\int \frac{1}{4 \pi \epsilon_{0}} \frac{dq}{s}.\]</div>
+<p>En donde al igual que el campo eléctrico <span class="math notranslate nohighlight">\(dq\)</span> representa un elemento de carga volumétrico, de área o línea según se requiera.</p>
 </section>
 <section id="ejemplo-2-8">
 <h2><span class="section-number">1.3.7. </span>Ejemplo 2.8<a class="headerlink" href="#ejemplo-2-8" title="Permalink to this headline">#</a></h2>
+<p>Encuentre el potencial debido a un cascarón esférico uniformemente cargado de radio R.</p>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>El ejercicio se resuelve en clase, se recomienda que el lector intente resolverlo por su cuenta y tome la respuesta como guía.</p>
+</div>
+<p>Respuesta:</p>
+<div class="math notranslate nohighlight" id="equation-solucion-ejemplo-2-8">
+<span class="eqno">(1.65)<a class="headerlink" href="#equation-solucion-ejemplo-2-8" title="Permalink to this equation">#</a></span>\[\begin{split}V(\mathbf{r}) = \left\{ \begin{array}{ll}  \frac{1}{4 \pi \epsilon_{0}}  \frac{q}{r} &amp; r\ge R \\  \frac{1}{4 \pi \epsilon_{0}} \frac{q}{R} &amp; r\le R   \end{array} \right.\end{split}\]</div>
 </section>
 <section id="condiciones-de-frontera">
 <h2><span class="section-number">1.3.8. </span>Condiciones de frontera<a class="headerlink" href="#condiciones-de-frontera" title="Permalink to this headline">#</a></h2>
+<p>En un problema típico de electroestática hay una distribución de carga conocida <span class="math notranslate nohighlight">\(\rho(\mathbf{r})\)</span> y se busca el campo eléctrico <span class="math notranslate nohighlight">\(\mathbf{E}(\mathbf{r})\)</span>. Si el sistema no tiene las simetrías que permiten el uso de la ley de Gauss, es más cómodo trabajar con el potencial escalar, <span class="math notranslate nohighlight">\(V(\mathbf{r}) \)</span> y resolver las ecuaciones diferenciales de Laplace o Poisson.</p>
+<p>En los problemas electroestáticos <span class="math notranslate nohighlight">\(\rho(\mathbf{r}), V(\mathbf{r})\)</span> y <span class="math notranslate nohighlight">\(\mathbf{E}(\mathbf{r})\)</span> son cantidades fundamentales.</p>
+<p>Hasta el momento el uso de métodos integrales ha sido motivado por el principio de superposición. Para usar las ecuaciones diferenciales necesitamos conocer las condiciones de frontera de esas ecuaciones.</p>
+<section id="condiciones-de-frontera-del-campo-electrico">
+<h3><span class="section-number">1.3.8.1. </span>Condiciones de frontera del campo eléctrico<a class="headerlink" href="#condiciones-de-frontera-del-campo-electrico" title="Permalink to this headline">#</a></h3>
+<p>Una condición de frontera relevante es la de una distribución de carga superficial. Como veremos con más detalle más adelante, una carga superficial representa a un conductor en el límite electroestático. En los ejemplos y ejercicios hemos visto que el campo eléctrico tiene una discontinuidad al atravesar una distribución de carga superficial. Tiene un valor antes de cruzar una superfice de carga y luego al cruzarla, la carga superficial contribuye a la carga encerrada.  Para calcular esta discontinuidad supondremos las condiciones de la figura.</p>
+<p>Al calcular el campo eléctrico en la tapas superior e inferior de área <span class="math notranslate nohighlight">\(A\)</span> de la caja que contiene a la densidad de carga superficial <span class="math notranslate nohighlight">\(\sigma\)</span> con carga encerrada <span class="math notranslate nohighlight">\(Q_{enc}=\sigma A\)</span> se obtiene lo siguiente:</p>
+<div class="math notranslate nohighlight" id="equation-discontinuidad-superficie-0">
+<span class="eqno">(1.66)<a class="headerlink" href="#equation-discontinuidad-superficie-0" title="Permalink to this equation">#</a></span>\[\oint \mathbf{E} \cdot d \vec{a} = E_{\perp a}A -E_{\perp b}A =\frac{Q_{enc}}{\epsilon_{0}}=\frac{\sigma A}{\epsilon_{0}}\]</div>
+<p>O bien, despejando el área</p>
+<div class="math notranslate nohighlight" id="equation-discontinuidad-superficie-1">
+<span class="eqno">(1.67)<a class="headerlink" href="#equation-discontinuidad-superficie-1" title="Permalink to this equation">#</a></span>\[E_{\perp a} -E_{\perp b}=\frac{\sigma }{\epsilon_{0}}\]</div>
+<p>Para la parte horizontal integramos en el camino que se muestra en la figura. Para evaluar esta ingeral recordamos que la fuerza es conservativa, <a class="reference internal" href="#equation-int-e-cero">(1.36)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-int-e-cero-b">
+<span class="eqno">(1.68)<a class="headerlink" href="#equation-int-e-cero-b" title="Permalink to this equation">#</a></span>\[\oint \mathbf{E} \cdot d \vec{l}=0,\]</div>
+<p>por lo que en esta dirección no tiene discontinuidad (la diferencia <span class="math notranslate nohighlight">\(E_{\parallel a}-E_{\parallel b}=0\)</span>)</p>
+<div class="math notranslate nohighlight" id="equation-int-e-cero-c">
+<span class="eqno">(1.69)<a class="headerlink" href="#equation-int-e-cero-c" title="Permalink to this equation">#</a></span>\[\lim_{\epsilon \rightarrow 0 } \oint \mathbf{E} \cdot d \vec{l}= (E_{\parallel a}-E_{\parallel b}) l =0\]</div>
+<p>Ambos resultados se simplifican con el vector unitario normal a la superficie de carga, <span class="math notranslate nohighlight">\(\hat{n}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-discontinuidad-superficie">
+<span class="eqno">(1.70)<a class="headerlink" href="#equation-discontinuidad-superficie" title="Permalink to this equation">#</a></span>\[\mathbf{E}_{a}-\mathbf{E}_{b}=\frac{\sigma}{\epsilon_{0}} \hat{n}\]</div>
+</section>
+<section id="condiciones-de-frontera-del-potencial-electrico">
+<h3><span class="section-number">1.3.8.2. </span>Condiciones de frontera del potencial eléctrico<a class="headerlink" href="#condiciones-de-frontera-del-potencial-electrico" title="Permalink to this headline">#</a></h3>
+<p>Como el potencial es la integral de camino del campo eléctrico, <a class="reference internal" href="#equation-delta-potencial-electrico">(1.40)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-delta-potencial-electrico-b">
+<span class="eqno">(1.71)<a class="headerlink" href="#equation-delta-potencial-electrico-b" title="Permalink to this equation">#</a></span>\[V(\mathbf{b})-V(\mathbf{a})=-\int_{\mathbf{a}}^{\mathbf{b}} \mathbf{E} \cdot d \vec{l},\]</div>
+<p>es conservativa, se cumple que al tomar un camino que atraviese la superficie justo arriba y abajo de ella,</p>
+<div class="math notranslate nohighlight" id="equation-delta-potencial-electrico-c">
+<span class="eqno">(1.72)<a class="headerlink" href="#equation-delta-potencial-electrico-c" title="Permalink to this equation">#</a></span>\[\lim_{\epsilon \rightarrow 0}-\int_{\mathbf{a}}^{\mathbf{b}} \mathbf{E} \cdot d \vec{l}=0.\]</div>
+<p>Que esta integral sea cero significa que el potencial arriba y abajo de la superficie es el mismo:</p>
+<div class="math notranslate nohighlight" id="equation-delta-potencial-electrico-d">
+<span class="eqno">(1.73)<a class="headerlink" href="#equation-delta-potencial-electrico-d" title="Permalink to this equation">#</a></span>\[V(\mathbf{b})-V(\mathbf{a})=0.\]</div>
+<p>En otras palabras <span class="math notranslate nohighlight">\(V(\mathbf{b})=V(\mathbf{a})\)</span>, no hay una discontinuidad. El potencial es continuo al atravesar cualquier supercie de carga (esto lo vimos en el ejemplo del cascaron de carga.)</p>
+<p>La derivada del potencial está relacionada al campo eléctrico. Para ver esto recordemos que con el gradiente y una dirección dada por el vector unitario <span class="math notranslate nohighlight">\(\hat{n}\)</span> podemos definir la derivada direccional</p>
+<div class="math notranslate nohighlight" id="equation-derivada-direccional">
+<span class="eqno">(1.74)<a class="headerlink" href="#equation-derivada-direccional" title="Permalink to this equation">#</a></span>\[\frac{\partial V_{a}}{\partial n}= \vec{\nabla} V_{a} \cdot \hat{n}\]</div>
+<p>Si este vector apunta en la dirección perpendicular a una distribución de carga superficial <span class="math notranslate nohighlight">\(\sigma\)</span>, de la condición del camop eléctrico, <a class="reference internal" href="#equation-discontinuidad-superficie">(1.70)</a> y el producto punto con <span class="math notranslate nohighlight">\(\hat{n}\)</span> de ambos lados :</p>
+<div class="math notranslate nohighlight" id="equation-discontinuidad-superficie-potencial">
+<span class="eqno">(1.75)<a class="headerlink" href="#equation-discontinuidad-superficie-potencial" title="Permalink to this equation">#</a></span>\[\frac{\partial V_{a}}{\partial n}-\frac{\partial V_{b}}{\partial n}=\frac{\sigma}{\epsilon_{0}} \]</div>
+<p>Estas condiciones de frontera son válidas en la región cercana a la superficie de carga, es decir cuando <span class="math notranslate nohighlight">\(\epsilon \rightarrow 0\)</span>.</p>
+</section>
 </section>
 </section>
 
